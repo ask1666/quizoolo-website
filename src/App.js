@@ -3,11 +3,12 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Login from './Views/Login';
+import CreateUser from './Views/CreateUser';
+import CreateQuiz from './Views/CreateQuiz';
 
 function App() {
   let username = localStorage.getItem('username');
@@ -22,8 +23,17 @@ function App() {
         <Route exact path="/">
           <h1>home</h1>
         </Route>
+
         <Route path="/loginPage">
           <Login />
+        </Route>
+
+        <Route path="/createUserPage">
+          <CreateUser />
+        </Route>
+
+        <Route path="/createQuizPage">
+          <CreateQuiz />
         </Route>
         
         <Route path="/aboutPage">

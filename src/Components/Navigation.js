@@ -4,8 +4,6 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useTransition, animated } from 'react-spring';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link
   } from "react-router-dom";
 
@@ -54,7 +52,7 @@ function Navigation() {
                     <animated.div
                         key={key}
                         style={props}
-                        className="fixed bg-white top-0 left-0 w-4/5 h-full z-50 shadow p-3"
+                        className="fixed bg-white top-0 left-0 w-1/5 h-full z-50 shadow p-3"
                     >
                         <span className="font-bold">
                             The menu
@@ -68,6 +66,12 @@ function Navigation() {
                             </li>
                             <li>
                                 <Link onClick={() => setShowMenu(false)} to="/loginPage" className="text-blue-500 py-3 border-b block border-black border-opacity-25">Login</Link>
+                            </li>
+                            <li>
+                                <Link onClick={() => setShowMenu(false)} to="/createUserPage" className="text-blue-500 py-3 border-b block border-black border-opacity-25">Create User</Link>
+                            </li>
+                            <li>
+                                <Link onClick={() => setShowMenu(false)} to="/createQuizPage" className="text-blue-500 py-3 border-b block border-black border-opacity-25">Create Quiz</Link>
                             </li>
                         </ul>
                     </animated.div>
