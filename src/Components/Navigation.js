@@ -73,6 +73,9 @@ function Navigation() {
                             <li>
                                 <Link onClick={() => setShowMenu(false)} to="/createQuizPage" className="text-blue-500 py-3 border-b block border-black border-opacity-25">Create Quiz</Link>
                             </li>
+                            <li>
+                                <Link onClick={() => setShowMenu(false)} to="/displayYourQuiz" className="text-blue-500 py-3 border-b block border-black border-opacity-25">My quiz</Link>
+                            </li>
                         </ul>
                     </animated.div>
                 )

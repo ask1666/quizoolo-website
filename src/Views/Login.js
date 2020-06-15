@@ -6,6 +6,7 @@ import {
         Link,
 
 } from "react-router-dom";
+import Header from '../Components/Header';
 
 class Login extends React.Component {
     state = {
@@ -35,10 +36,10 @@ class Login extends React.Component {
             password: password
         })
             .then(res => {
-                localStorage.setItem('authToken', res.data);
-                localStorage.setItem('username', username);
-                console.log('did it');
-
+                sessionStorage.setItem('authToken', res.data);
+                sessionStorage.setItem('username', username);
+                
+                
                 this.setState({ loginStatus: true });
             })
             .catch(err => {
@@ -50,6 +51,7 @@ class Login extends React.Component {
 
     render() {
         if (this.state.loginStatus) {
+            
             return <Redirect to='/' />
         }
         return (
@@ -75,10 +77,10 @@ class Login extends React.Component {
                         </p>
                     </div>
                     <div className="flex items-center justify-between">
-                        <button className=" pr-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                        <button  className=" pr-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                             Sign In
                         </button>
-                        <Link className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" to="/createUserPage">
+                        <Link className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" to="/">
                             Create User
                         </Link>
                     </div>

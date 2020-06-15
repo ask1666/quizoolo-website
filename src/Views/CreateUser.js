@@ -79,7 +79,7 @@ class createUser extends React.Component {
                         <label className="block text-gray-700 text-sm font-bold mb-2" >
                             Confirm Password
                         </label>
-                        <input onChange={this.handlePassChange} id="passwordInput"  className= "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"  type="password" placeholder="******************" pattern=".{8,}" required/>
+                        <input onChange={this.handleConfirmPassChange} id="passwordInput"  className= "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"  type="password" placeholder="******************" pattern=".{8,}" required/>
                         <p className="text-red-500 text-xs italic">
                             {this.state.createUserFeedback}
                             {this.state.validation}

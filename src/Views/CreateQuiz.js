@@ -9,14 +9,14 @@ import {
 
 class createQuiz extends React.Component {
     state = {
-        QuizName: '',
+        quizName: '',
         createUserStatus: false,
         createUserFeedback: '',
         validation: '',
     };
 
     handleQuizNameChange = event => {
-        this.setState({ QuizName: event.target.value});
+        this.setState({ quizName: event.target.value});
     }
 
     handleSubmit = event => {
@@ -25,11 +25,11 @@ class createQuiz extends React.Component {
         const quizName = this.state.quizName;
 
         
-        Axios.post('http://localhost:3000/userActions/createUser', {
+        Axios.put('http://localhost:3000/userActions/createQuiz', {
             quizName: quizName},
-            {authToken: localStorage.getItem('authToken')})
+            {headers: {authToken: sessionStorage.getItem('authToken')}})
             .then(res => {
-                
+                console.log(res);
                 this.setState({createUserStatus: true});
             })
             .catch(err => {
