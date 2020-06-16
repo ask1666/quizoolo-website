@@ -20,6 +20,7 @@ class DisplayQuiz extends React.Component {
             })
                 .then(res => {
                     this.setState({load: false, quiz: res.data});
+                    console.log(this.state.quiz);
                 })
                 .catch(err => {
                     console.log(err);

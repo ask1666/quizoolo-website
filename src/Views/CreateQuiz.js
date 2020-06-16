@@ -3,12 +3,14 @@ import Axios from 'axios';
 import {
     Redirect,
 } from "react-router-dom";
+import { withRouter } from 'react-router';
 
 class createQuiz extends React.Component {
     state = {
         quizName: '',
-        createUserStatus: false,
-        createUserFeedback: '',
+        quizId: '',
+        createQuizStatus: false,
+        createQuizFeedback: '',
         validation: '',
     };
 
@@ -27,18 +29,18 @@ class createQuiz extends React.Component {
         },
             { headers: { authToken: sessionStorage.getItem('authToken') } })
             .then(res => {
-                this.setState({ createUserStatus: true });
+                this.setState({ createQuizStatus: true , quizId: res.data});
             })
             .catch(err => {
                 console.log(err);
-                this.setState({ createUserFeedback: err.res ? err.res : err.message });
+                this.setState({ createQuizFeedback: err.res ? err.res : err.message });
             });
 
     }
 
     render() {
-        if (this.state.createUserStatus) {
-            return <Redirect to='/' />
+        if (this.state.createQuizStatus) {
+            return <Redirect to={{pathname: `/displayQuiz/`, state:{quizId: this.state.quizId}}} />
         }
         return (
             <div className="container mx-auto max-w-xs flex justify-center">
@@ -50,7 +52,7 @@ class createQuiz extends React.Component {
                     <div className="mb-6">
                         <input onChange={this.handleQuizNameChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Quiz name" pattern=".{3,}" required />
                         <p className="text-red-500 text-xs italic">
-                            {this.state.createUserFeedback}
+                            {this.state.createQuizFeedback}
                             {this.state.validation}
                         </p>
                     </div>
@@ -68,4 +70,4 @@ class createQuiz extends React.Component {
 }
 
 
-export default createQuiz;
+export default withRouter(createQuiz);
