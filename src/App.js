@@ -10,6 +10,7 @@ import Login from './Views/Login';
 import CreateUser from './Views/CreateUser';
 import CreateQuiz from './Views/CreateQuiz';
 import DisplayYourQuiz from './Views/DisplayYourQuiz';
+import DisplayQuiz from './Views/DisplayQuiz';
 
 function App() {
   
@@ -46,6 +47,12 @@ function App() {
         <Route path="/displayYourQuiz">
         <Header />
           <DisplayYourQuiz />
+        </Route>
+
+        <Route path="/displayQuiz" >
+          <Header/>
+          <DisplayQuiz/>
+        
         </Route>
         
         <Route path="/aboutPage">

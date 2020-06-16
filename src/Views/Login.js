@@ -1,12 +1,10 @@
 import React from 'react';
 import Axios from 'axios';
 import {
-    BrowserRouter as Router,
         Redirect,
         Link,
 
 } from "react-router-dom";
-import Header from '../Components/Header';
 
 class Login extends React.Component {
     state = {

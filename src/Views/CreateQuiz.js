@@ -1,11 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 import {
-    BrowserRouter as Router,
     Redirect,
-    Link,
-    
-  } from "react-router-dom";
+} from "react-router-dom";
 
 class createQuiz extends React.Component {
     state = {
@@ -16,32 +13,32 @@ class createQuiz extends React.Component {
     };
 
     handleQuizNameChange = event => {
-        this.setState({ quizName: event.target.value});
+        this.setState({ quizName: event.target.value });
     }
 
     handleSubmit = event => {
         event.preventDefault();
-        
+
         const quizName = this.state.quizName;
 
-        
+
         Axios.put('http://localhost:3000/userActions/createQuiz', {
-            quizName: quizName},
-            {headers: {authToken: sessionStorage.getItem('authToken')}})
+            quizName: quizName
+        },
+            { headers: { authToken: sessionStorage.getItem('authToken') } })
             .then(res => {
-                console.log(res);
-                this.setState({createUserStatus: true});
+                this.setState({ createUserStatus: true });
             })
             .catch(err => {
                 console.log(err);
-                this.setState({createUserFeedback: err.res ? err.res : err.message});
+                this.setState({ createUserFeedback: err.res ? err.res : err.message });
             });
-        
+
     }
 
     render() {
         if (this.state.createUserStatus) {
-            return <Redirect to='/'/>
+            return <Redirect to='/' />
         }
         return (
             <div className="container mx-auto max-w-xs flex justify-center">
@@ -51,7 +48,7 @@ class createQuiz extends React.Component {
                         Choose a name for your Quiz!
                     </h1>
                     <div className="mb-6">
-                        <input onChange={this.handleQuizNameChange} className= "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Quiz name" pattern=".{3,}" required/>
+                        <input onChange={this.handleQuizNameChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Quiz name" pattern=".{3,}" required />
                         <p className="text-red-500 text-xs italic">
                             {this.state.createUserFeedback}
                             {this.state.validation}
@@ -59,9 +56,9 @@ class createQuiz extends React.Component {
                     </div>
                     <div className="flex items-center justify-center">
                         <button className=" pr-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                            Create User
+                            Create Quiz
                         </button>
-                        
+
                     </div>
                 </form>
 
