@@ -46,7 +46,7 @@ constructor(props) {
                 
         {this.state.quiz.map(quiz  => <li key={quiz._id} className=" flex flex-row content-start border-b-2 border-black border-opacity-25 ">
             
-            <Link  className="  text-center pb-3 pt-3  bg-orange-400 w-11/12" to={{pathname: `/displayQuiz/`, state:{quizId: quiz._id}}}>
+            <Link  className="  text-center pb-3 pt-3  bg-orange-400 w-11/12" to={{pathname: `/displayQuiz/`, state:{quizName: quiz.quizName, quizId: quiz._id}}}>
                     {quiz.quizName}
             </Link>
             <DeleteQuizBtn updateDeleted={this.updateDeleted} deleted={this.state.deleted} quiz={quiz} quizName={quiz.quizName}/>
