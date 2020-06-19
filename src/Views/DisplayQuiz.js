@@ -3,6 +3,11 @@ import Axios from 'axios';
 import { withRouter } from 'react-router';
 import DeleteQuestionBtn from '../Components/DeleteQuestionBtn'
 import QuestionForm from '../Components/QuestionForm';
+import PlayQuiz from './PlayQuiz';
+
+import {
+    Link
+  } from "react-router-dom";
 
 class DisplayQuiz extends React.Component {
 
@@ -15,7 +20,7 @@ class DisplayQuiz extends React.Component {
 
     addQuestionBtn = (
         <button onClick={() => this.setState({ toggleQuestionForm: true })}
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+            className="bg-green-300 hover:bg-green-500 text-black font-bold py-1 px-1 rounded">
             Add a Question
         </button>
     );
@@ -87,15 +92,22 @@ class DisplayQuiz extends React.Component {
     render() {
         this.loadQuestions();
         return (
-            <div>
+            <div className=" pt-5 text-center bg-blue-300">
                 <h1 className="text-4xl p-5 text-center border border-green-400 bg-green-300 font-bold">{this.state.quiz.quizName}</h1>
-                <div className=" pt-5 text-center bg-blue-300">
+                <div className="pb-2">
                     <h1 className="text-2xl p-5 text-center font-bold">Questions:</h1>
                     <ul>
                         {this.printQuestions()}
                     </ul>
-                    {this.addBtnIfNotExistElseAddForm()}
-
+                    <div className="p-5">
+                        {this.addBtnIfNotExistElseAddForm()}
+                    </div>
+                </div>
+                <div className="p-5 border-t-2 border-green-300">
+                    <Link to={{pathname: `/playQuiz/`, state:{questions: this.state.questions}}}
+                        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                        Play Quiz
+                    </Link>
                 </div>
             </div>
 

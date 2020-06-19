@@ -11,6 +11,7 @@ import CreateUser from './Views/CreateUser';
 import CreateQuiz from './Views/CreateQuiz';
 import DisplayYourQuiz from './Views/DisplayYourQuiz';
 import DisplayQuiz from './Views/DisplayQuiz';
+import PlayQuiz from './Views/PlayQuiz';
 
 function App() {
   
@@ -52,6 +53,12 @@ function App() {
         <Route path="/displayQuiz" >
           <Header/>
           <DisplayQuiz/>
+        
+        </Route>
+
+        <Route path="/playQuiz" >
+          <Header/>
+          <PlayQuiz/>
         
         </Route>
         
