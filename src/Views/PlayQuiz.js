@@ -45,19 +45,26 @@ class PlayQuiz extends React.Component {
         this.shuffle(answers);
         console.log(answers);
         return (
-            <div className="container">
-                <h1>
+            <div className="pt-5 h-full text-center bg-blue-400 ">
+                <h1 className="text-xl font-bold pb-5">
                     {question.question}
                 </h1>
-                <div className="flex flex-wrap">
-                    {answers.map( answer => 
-                        <div className=" p-3" key={answer}>
-                            <button className="bg-green-500 hover:bg-green-700 text-white text-center font-bold py-2 px-4 rounded" >
-                                {answer}
-                            </button>
-                        </div>
-                    )}
+                <div className="bg-blue-400 items-center p-3">
+                    <h1 className="">
+                        Choose one of the following answers:
+                    </h1>
+                    <div className="flex flex-wrap w-full items-center p-20 justify-center bg-blue-400">
+                        {answers.map( answer => 
+                            <div className=" p-3" key={answer}>
+                                <button 
+                                    className="bg-green-500 hover:bg-green-700 text-white text-center font-bold py-2 px-4 rounded" >
+                                        {answer}
+                                </button>
+                            </div>
+                        )}
+                    </div>
                 </div>
+                
             </div>
         );
     }

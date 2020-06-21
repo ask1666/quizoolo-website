@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import Axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 function QuestionForm(props)  {
@@ -39,6 +41,7 @@ function QuestionForm(props)  {
 
     return(
         <div className="container mx-auto max-w-xs flex justify-center bg-gray-400">
+            
             <form onSubmit={(event) => handleSubmit(event)} className="w-full max-w-sm p-5">
                 <div className=" md:items-center mb-6">
                     <div className="">
@@ -88,6 +91,12 @@ function QuestionForm(props)  {
                     </div>
                 </div>
             </form>
+            <button className="flex items-start h-6 p-2 text-2xl text-red-500">
+                <FontAwesomeIcon
+                        icon={faTimes}
+                        onClick={() => handleQuestionFormToggle(false)}
+                    />
+            </button>
         </div>
     );
 }

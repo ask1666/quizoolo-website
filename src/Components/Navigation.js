@@ -25,7 +25,7 @@ function Navigation() {
 
     return (
         <nav>
-            <span className="text-xl">
+            <span className="text-xl text-red-700">
                 <FontAwesomeIcon
                     icon={faBars}
                     onClick={() => setShowMenu(!showMenu)}
@@ -52,29 +52,29 @@ function Navigation() {
                     <animated.div
                         key={key}
                         style={props}
-                        className="fixed bg-white top-0 left-0 w-1/5 h-full z-50 shadow p-3"
+                        className="fixed bg-white top-0 left-0 w-1/5 h-full z-50 shadow p-3 bg-orange-300"
                     >
                         <span className="font-bold">
-                            The menu
+                            Menu
                         </span>
                         <ul>
-                            <li>
-                                <Link onClick={() => setShowMenu(false)} to="/" className="text-blue-500 py-3 border-t border-b block border-black border-opacity-25" >Home</Link>
+                            <li className="pt-2">
+                                <Link onClick={() => setShowMenu(false)} to="/" className="  bg-green-500 text-center hover:bg-green-700 px-2 text-white py-3 block" >Home</Link>
                             </li>
-                            <li>
-                                <Link onClick={() => setShowMenu(false)} to="/aboutPage" className="text-blue-500 py-3 border-b block border-black border-opacity-25">About</Link>
+                            <li className="pt-2">
+                                <Link onClick={() => setShowMenu(false)} to="/aboutPage" className="  bg-green-500 hover:bg-green-700 px-2 text-center text-white py-3 block">About</Link>
                             </li>
-                            <li>
-                                <Link onClick={() => setShowMenu(false)} to="/loginPage" className="text-blue-500 py-3 border-b block border-black border-opacity-25">Login</Link>
+                            <li className="pt-2">
+                                <Link onClick={() => setShowMenu(false)} to="/loginPage" className="  bg-green-500 hover:bg-green-700 px-2 text-center text-white py-3 block">Login</Link>
                             </li>
-                            <li>
-                                <Link onClick={() => setShowMenu(false)} to="/createUserPage" className="text-blue-500 py-3 border-b block border-black border-opacity-25">Create User</Link>
+                            <li className="pt-2">
+                                <Link onClick={() => setShowMenu(false)} to="/createUserPage" className="  bg-green-500 hover:bg-green-700 px-2 text-center text-white py-3 block">Create User</Link>
                             </li>
-                            <li>
-                                <Link onClick={() => setShowMenu(false)} to="/createQuizPage" className="text-blue-500 py-3 border-b block border-black border-opacity-25">Create Quiz</Link>
+                            <li className="pt-2">
+                                <Link onClick={() => setShowMenu(false)} to="/createQuizPage" className="  bg-green-500 hover:bg-green-700 px-2 text-center text-white py-3 block">Create Quiz</Link>
                             </li>
-                            <li>
-                                <Link onClick={() => setShowMenu(false)} to="/displayYourQuiz" className="text-blue-500 py-3 border-b block border-black border-opacity-25">My quiz</Link>
+                            <li className="pt-2">
+                                <Link onClick={() => setShowMenu(false)} to="/displayYourQuiz" className="  bg-green-500 hover:bg-green-700 px-2 text-center text-white py-3 block">My quiz</Link>
                             </li>
                         </ul>
                     </animated.div>

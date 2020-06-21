@@ -6,7 +6,7 @@ class Header extends React.Component {
     
     render() {
         return (
-            <header className="border-b-2 p-3 flex justify-between content-center border-opacity-25 border-black">
+            <header className="border-b-2 p-3 flex justify-between bg-orange-300 content-center border-opacity-25 border-black">
                 <Navigation />
 
                 <span className=" font-bold ">
