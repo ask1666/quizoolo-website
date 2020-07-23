@@ -56,14 +56,14 @@ class PlayQuiz extends React.Component {
     showScoreScreen = () => {
         return (
         <div
-            className="pt-5 h-full text-center bg-blue-400">
+            className="pt-5 h-full text-center">
             <h1 className="text-xl font-bold pb-5">
                 You got {this.NrOfSuccess}/{this.NrOfQuestions} points!
             </h1>
-            <div className="flex flex-wrap w-full items-center p-20 justify-center bg-blue-400">
+            <div className="flex flex-wrap w-full items-center p-20 justify-center">
                 <button 
                     onClick={this.props.history.goBack}
-                    className="bg-green-500 hover:bg-green-700 text-white text-center font bold py-2 px-4 rounded"
+                    className="bg-blue-500 hover:bg-blue-700 text-white text-center font bold py-2 px-4 rounded"
                 >
                     Back
                 </button>
@@ -102,21 +102,21 @@ class PlayQuiz extends React.Component {
             answers.push(question.rightAnswer);
         this.shuffle(answers);
         return (
-            <div className="pt-5 h-full text-center bg-blue-400 ">
+            <div className="pt-5 h-full text-center ">
                 <h1 className="text-xl font-bold pb-5">
                     {question.question}
                 </h1>
-                <div className="bg-blue-400 items-center p-3">
+                <div className=" items-center p-3">
                     <h1 className="">
                         Choose one of the following answers:
                     </h1>
-                    <div className="flex flex-wrap w-full items-center p-20 justify-center bg-blue-400">
+                    <div className="flex flex-wrap w-full items-center p-20 justify-center ">
                         {answers.map( answer => 
                             <div className=" p-3" key={answer}> 
                                 <button 
                                     onClick={this.selectAnswer}
                                     value={answer}
-                                    className="bg-yellow-500 hover:bg-yellow-700 text-blue-600 text-center font-bold py-2 px-4 rounded" >
+                                    className="bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-2 px-4 rounded" >
                                         {answer}
                                 </button>
                             </div>
@@ -126,7 +126,7 @@ class PlayQuiz extends React.Component {
                             <div className="p-5">
                                 <button 
                                     onClick={this.checkAnswer}
-                                    className=" bg-green-500 hover:bg-green-700 text-white text-center font bold py-2 px-4 rounded">
+                                    className=" bg-blue-500 hover:bg-blue-700 text-white text-center font bold py-2 px-4 rounded">
                                         Check Answer
                                 </button>
                             </div>
@@ -146,7 +146,7 @@ class PlayQuiz extends React.Component {
                                         }
                                         
                                     }}
-                                    className=" bg-green-500 hover:bg-green-700 text-white text-center font bold py-2 px-4 rounded">
+                                    className=" bg-blue-500 hover:bg-blue-700 text-white text-center font bold py-2 px-4 rounded">
                                         Next
                                 </button>
                             </div>

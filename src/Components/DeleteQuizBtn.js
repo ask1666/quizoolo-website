@@ -15,7 +15,7 @@ class deleteQuizBtn extends React.Component {
     render() {
 
         return (
-            <button onClick={() => { this.handleDelete(this.state.quizName) }}  className=" bg-red-400 flex h-auto w-2/12 text-center justify-center">
+            <button onClick={() => { this.handleDelete(this.state.quizName) }}  className=" bg-red-300 hover:bg-red-400 shadow-xl flex h-auto w-2/12 text-center justify-center">
                     <FontAwesomeIcon  className="fa-2x self-center"
                         icon={faTrash}
 

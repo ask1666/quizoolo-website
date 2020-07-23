@@ -34,16 +34,15 @@ class Login extends React.Component {
             password: password
         })
             .then(res => {
-                sessionStorage.setItem('authToken', res.data);
+                sessionStorage.setItem('authToken', res.data.authToken);
                 sessionStorage.setItem('username', username);
-                
-                
+                sessionStorage.setItem('userid', res.data.userid)
                 this.setState({ loginStatus: true });
             })
             .catch(err => {
                 console.log(err);
                 this.setState({ loginFeedback: 'Wrong username or password', passwordBorder: `border-red-500` })
-                console.log(this.state.passwordBorder);
+                
             });
     }
 
@@ -53,9 +52,9 @@ class Login extends React.Component {
             return <Redirect to='/' />
         }
         return (
-            <div className=" w-full flex justify-center bg-blue-400">
+            <div className=" w-full flex justify-center pt-10">
 
-                <form onSubmit={this.handleSubmit} className="bg-green-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 ">
+                <form onSubmit={this.handleSubmit} className=" shadow-2xl border-4 border-gray-400 rounded-lg px-8 pt-6 pb-8 mb-4 ">
                     <h1 className="font-bold text-2xl p-5 text-center">
                         Login
                     </h1>
@@ -63,13 +62,13 @@ class Login extends React.Component {
                         <label className="block text-gray-700 text-sm font-bold mb-2">
                             Username
                         </label>
-                        <input onChange={this.handleUserChange} id="usernameInput" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Username" required/>
+                        <input onChange={this.handleUserChange} id="usernameInput" className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Username" required/>
                     </div>
                     <div className="mb-6">
                         <label className="block text-gray-700 text-sm font-bold mb-2" >
                             Password
                         </label>
-                        <input onChange={this.handlePassChange} id="passwordInput" className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" ${this.state.passwordBorder}`} type="password" placeholder="******************" required/>
+                        <input onChange={this.handlePassChange} id="passwordInput" className={` appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ${this.state.passwordBorder}`} type="password" placeholder="******************" required/>
                         <p className="text-red-500 text-xs italic">
                             {this.state.loginFeedback}
                         </p>
@@ -78,7 +77,7 @@ class Login extends React.Component {
                         <button  className=" pr-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                             Sign In
                         </button>
-                        <Link className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" to="/">
+                        <Link className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" to="/createUserPage">
                             Create User
                         </Link>
                     </div>

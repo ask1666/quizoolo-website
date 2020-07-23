@@ -40,9 +40,9 @@ function QuestionForm(props)  {
     }
 
     return(
-        <div className="container mx-auto max-w-xs flex justify-center bg-gray-400">
+        <div className="container mx-auto max-w-xs flex justify-center">
             
-            <form onSubmit={(event) => handleSubmit(event)} className="w-full max-w-sm p-5">
+            <form onSubmit={(event) => handleSubmit(event)} className="w-full max-w-sm p-5 border-4 border-gray-400 shadow-2xl">
                 <div className=" md:items-center mb-6">
                     <div className="">
                         <label className="block text-black-500 font-bold t mb-1  pr-4" htmlFor="inline-full-name">
@@ -84,7 +84,7 @@ function QuestionForm(props)  {
                 <div className=" md:items-center">
                     <div className="">
                         <button
-                            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                             type="submit">
                             Create Question
                         </button>

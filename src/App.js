@@ -5,13 +5,13 @@ import {
   Route,
 } from "react-router-dom";
 import Header from './Components/Header';
-import Footer from './Components/Footer';
 import Login from './Views/Login';
 import CreateUser from './Views/CreateUser';
 import CreateQuiz from './Views/CreateQuiz';
 import DisplayYourQuiz from './Views/DisplayYourQuiz';
 import DisplayQuiz from './Views/DisplayQuiz';
 import PlayQuiz from './Views/PlayQuiz';
+import Home from './Views/Home';
 
 function App() {
   
@@ -27,7 +27,7 @@ function App() {
       <Switch>
         <Route exact path="/" >
         <Header />              {/* Header needs to be inside because username in header needs to change upon sessionstorage change. */}
-          <h1>home</h1>
+          <Home/>
         </Route>
 
         <Route path="/loginPage">
@@ -62,13 +62,7 @@ function App() {
         
         </Route>
         
-        <Route path="/aboutPage">
-        <Header />
-          <h1 className="font-bold text-2xl">This is the about page!</h1>
-        </Route>
       </Switch>
-
-      <Footer/>
 
       </Router>
       {/* <CounterExample/> */}

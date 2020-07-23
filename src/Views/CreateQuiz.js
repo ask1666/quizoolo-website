@@ -43,9 +43,9 @@ class createQuiz extends React.Component {
             return <Redirect to={{pathname: `/displayQuiz/`, state:{quizId: this.state.quizId}}} />
         }
         return (
-            <div className="bg-blue-400 flex justify-center">
+            <div className=" flex justify-center pt-10">
 
-                <form onSubmit={this.handleSubmit} className="bg-green-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 ">
+                <form onSubmit={this.handleSubmit} className=" shadow-2xl rounded-lg border-4 border-gray-400 px-8 pt-6 pb-8 mb-4 ">
                     <h1 className="font-bold text-2xl p-5 text-center">
                         Choose a name for your Quiz!
                     </h1>

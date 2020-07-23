@@ -52,29 +52,23 @@ function Navigation() {
                     <animated.div
                         key={key}
                         style={props}
-                        className="fixed bg-white top-0 left-0 w-1/5 h-full z-50 shadow p-3 bg-orange-300"
+                        className="fixed top-0 left-0 w-1/5 h-full z-50 shadow-2xl p-3 bg-white"
                     >
                         <span className="font-bold">
                             Menu
                         </span>
                         <ul>
                             <li className="pt-2">
-                                <Link onClick={() => setShowMenu(false)} to="/" className="  bg-green-500 text-center hover:bg-green-700 px-2 text-white py-3 block" >Home</Link>
+                                <Link onClick={() => setShowMenu(false)} to="/" className="  bg-blue-500 text-center hover:bg-blue-700 px-2 text-white py-3 block" >Home/Quiz</Link>
                             </li>
                             <li className="pt-2">
-                                <Link onClick={() => setShowMenu(false)} to="/aboutPage" className="  bg-green-500 hover:bg-green-700 px-2 text-center text-white py-3 block">About</Link>
+                                <Link onClick={() => setShowMenu(false)} to="/loginPage" className="  bg-blue-500 hover:bg-blue-700 px-2 text-center text-white py-3 block">Login</Link>
                             </li>
                             <li className="pt-2">
-                                <Link onClick={() => setShowMenu(false)} to="/loginPage" className="  bg-green-500 hover:bg-green-700 px-2 text-center text-white py-3 block">Login</Link>
+                                <Link onClick={() => setShowMenu(false)} to="/createQuizPage" className="  bg-blue-500 hover:bg-blue-700 px-2 text-center text-white py-3 block">Create Quiz</Link>
                             </li>
                             <li className="pt-2">
-                                <Link onClick={() => setShowMenu(false)} to="/createUserPage" className="  bg-green-500 hover:bg-green-700 px-2 text-center text-white py-3 block">Create User</Link>
-                            </li>
-                            <li className="pt-2">
-                                <Link onClick={() => setShowMenu(false)} to="/createQuizPage" className="  bg-green-500 hover:bg-green-700 px-2 text-center text-white py-3 block">Create Quiz</Link>
-                            </li>
-                            <li className="pt-2">
-                                <Link onClick={() => setShowMenu(false)} to="/displayYourQuiz" className="  bg-green-500 hover:bg-green-700 px-2 text-center text-white py-3 block">My quiz</Link>
+                                <Link onClick={() => setShowMenu(false)} to="/displayYourQuiz" className="  bg-blue-500 hover:bg-blue-700 px-2 text-center text-white py-3 block">My Quiz</Link>
                             </li>
                         </ul>
                     </animated.div>

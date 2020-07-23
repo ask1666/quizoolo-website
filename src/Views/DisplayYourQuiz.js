@@ -42,18 +42,21 @@ constructor(props) {
     render () {
         this.getQuiz();
         return (
-            <ul className="">
-                
-        {this.state.quiz.map(quiz  => <li key={quiz._id} className=" flex flex-row content-start border-t border-blue-500">
-            
-            <Link  className="  text-center pb-3 pt-3  bg-blue-400 w-11/12" to={{pathname: `/displayQuiz/`, state:{quizName: quiz.quizName, quizId: quiz._id}}}>
-                    {quiz.quizName}
-            </Link>
-            <DeleteQuizBtn updateDeleted={this.updateDeleted} deleted={this.state.deleted} quiz={quiz} quizName={quiz.quizName}/>
-            </li>)}
-                
-            </ul>
+            <div className="pt-3 flex justify-center w-full">
+                    <ul className="w-full md:w-8/12">
+                            
+                        {this.state.quiz.map(quiz  => <li key={quiz._id} className=" flex py-1 ">
+                            
+                            <Link  className="  text-center font-bold pb-3 pt-3 w-full bg-gray-300 hover:bg-gray-400 shadow-xl" to={{pathname: `/displayQuiz/`, state:{quizName: quiz.quizName, quizId: quiz._id, creator: quiz.creator}}}>
+                                    {quiz.quizName}
+                            </Link>
+                            <DeleteQuizBtn updateDeleted={this.updateDeleted} deleted={this.state.deleted} quiz={quiz} quizName={quiz.quizName}/>
+                        </li>)}
+                            
+                    </ul>
+                </div>
         )
+        
     }
 
     
